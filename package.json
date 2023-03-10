@@ -32,6 +32,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "develop": "concurrently \"cd server && npm run start\" \"cd client && npm start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "seed": "node --experimental-modules data/seed.mjs",
