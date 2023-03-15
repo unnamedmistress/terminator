@@ -1,66 +1,60 @@
-import React, { useState, useRef, useEffect } from "react";
-import { generateText } from "../openai.js";
-const prompt = "Write coverletter ";
-import { Configuration, OpenAIApi } from "openai";
-const response = generateText;
+import React, { useState } from "react";
+import { generateText, moderateText } from '../openai.js';
 
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
-});
 
-const openai = new OpenAIApi(configuration);
-
-// API call 
-async function handleSubmit(e) {
-  e.preventDefault();
-  const response = await openai.createCompletion({
-    model: "text-davinci-003",
-    prompt:
-      "Create a coverletter about :",
-    temperature: 0.3,
-    max_tokens: 150,
-    top_p: 1.0,
-    frequency_penalty: 0.0,
-    presence_penalty: 0.0,
-  });
-  setOutputText(response.choices[0].text);
-}
-
-function Cover() {
+const Cover = () => {
   const [inputText, setInputText] = useState("");
-  const [outputText, setOutputText] = useState("");
+  const [generatedText, setGeneratedText] = useState("");
+  const promptEssay = "some words";
 
+  const handleInputChange = (event) => {
+    setInputText(event.target.value);
+  };
+
+  const handleSubmit = async () => {
+    const response = await generateText(promptEssay, inputText);
+    setGeneratedText(response);
+  };
   return (
-    <div className="py-10">
-      <h1 className="text-5xl font-bold text-center text-gray-900 mb-8">CoverLetter Generator</h1>
-      <p className="text-lg font-semibold text-center text-gray-700 mb-8">Follow these instructions to create your CoverLetter.</p>
-      <br></br><br></br>
-      <form onSubmit={handleSubmit}>
-        <div className="w-1/2 mx-auto p-4">
-          <input
-            type="text"
-            className="w-full h-32 bg-gray-100 border border-gray-400 rounded py-2 px-4"
-            id="inputText"
-            value={inputText}
-            placeholder="Write your Cover here.."
-            onChange={(e) => setInputText(e.target.value)}
-          />
-        </div>
+    <div className="pb-80 pt-24 bg-zinc-900">
+      <h1 className="text-5xl font-bold text-center text-teal-900 hover:text-teal-400 mb-8">
+        CoverLetter Generator
+      </h1>
+      <p className="text-lg font-semibold text-center text-teal-500 hover:text-teal-300 mb-40">
+        Follow these instructions to create your Perfect CoverLetter. <br></br><br></br> Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit.Lorem ipsum dolor sit amet <br></br>
+        consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <br></br> <br></br><br></br>
+        Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit.Lorem ipsum dolor sit amet <br></br>
+        consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+      <div className="w-1/2 mx-auto p-4">
+        <input
+          className="w-full h-32 bg-gray-100 border border-gray-400 rounded py-2 px-4"
+          type="text"
+          placeholder="Write your CoverLetter here..."
+          value={inputText}
+          onChange={handleInputChange}
+        />
+        <br></br><br></br>
         <button
-          type="submit"
-          className="bg-teal-600 hover:bg-teal-800 text-white font-bold py-2 px-4 rounded"
+          className="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded"
+          onClick={handleSubmit}
         >
           Submit
         </button>
-      </form>
-      {outputText && (
-        <div className="mt-5">
-          <h2 className="text-xl font-bold mb-4">Output Text:</h2>
-          <p className="text-lg">{outputText}</p>
-        </div>
-      )}
+        {generatedText && (
+          <div className="mt-8 bg-gray-100 border border-gray-400 rounded py-4 px-6">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Generated Text:
+            </h3>
+            <p className="text-lg text-gray-700">{generatedText}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
-}
+};
 
 export default Cover; 

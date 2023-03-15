@@ -13,7 +13,7 @@ import UserAccount from "./component/useraccount.js";
 import ResponseForm from "./component/ResponseForm.js";
 import LoginForm from "./component/LoginForm.js";
 import SignupForm from "./component/SignupForm.js";
-
+import Footer from './component/footer.js';
 
 
 
@@ -32,6 +32,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/useraccount" element={<UserAccount />} />
         <Route path="/response-form" element={<ResponseForm />} />
       </Routes>
+      <Footer />
       <App />
     </Router>
   </React.StrictMode>
