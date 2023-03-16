@@ -13,7 +13,7 @@ const Footer = () => {
         <h3 className="font-bold text-gray-900 mb-4"></h3>
         <ul className="list-reset">
           <li className="mb-2">
-            <a href="#" className="flex items-center justify-center space-x-2">
+            <a href="https://github.com/unnamedmistress/terminator" className="flex items-center justify-center space-x-2">
             <svg
     xmlns="http://www.w3.org/2000/svg"
     class="h-10 w-10"

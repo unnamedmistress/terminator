@@ -7,8 +7,10 @@ const Contact = (props) => {
         <h1 style={{ textAlign: "center" }}>Contact</h1>
       </div>
 
-    <div className="flex justify-center">
-    <div className="flex-grow border rounded-lg p-4 mr-4"></div>
+
+    <div className="flex justify-center mt-8 mb-8">
+    <div className="flex-grow border rounded-lg p-4  mr-4">
+
       <p>Name: Chrysti Browne</p>
       <p>Email: momchrysti@gmail.com</p>
       <p><a href="https://github.com/unnamedmistress"><svg
