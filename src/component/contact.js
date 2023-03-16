@@ -3,7 +3,7 @@ import React from "react";
 const Contact = (props) => {
   return (
     <>
-      <div className="bg-gradient-to-r from-teal-900 to-black h-96 pt-24 text-white">
+      <div className="bg-gradient-to-r from-teal-900 to-black h-screen pt-24 text-white">
         <h1 style={{ textAlign: "center" }}>Contact</h1>
       </div>
 
