@@ -7,11 +7,13 @@ const Contact = (props) => {
         <h1 style={{ textAlign: "center" }}>Contact</h1>
       </div>
 
+
     <div className="flex justify-center mt-8 mb-8">
     <div className="flex-grow border rounded-lg p-4  mr-4">
+
       <p>Name: Chrysti Browne</p>
       <p>Email: momchrysti@gmail.com</p>
-      <p><a href="https://github.com/johnsmith"><svg
+      <p><a href="https://github.com/unnamedmistress"><svg
         xmlns="http://www.w3.org/2000/svg"
         class="h-5 w-5"
         fill="currentColor"
@@ -53,7 +55,7 @@ const Contact = (props) => {
 <div className="flex-grow border rounded-lg p-4 mr-4">
   <p>Name: Justin Delgado</p>
   <p>Email: justin@email.com</p>
-  <p><a href="https://github.com/bobjohnson"><svg
+  <p><a href="https://github.com/tydelgado98"><svg
     xmlns="http://www.w3.org/2000/svg"
     class="h-5 w-5"
     fill="currentColor"
@@ -71,10 +73,11 @@ const Contact = (props) => {
   </svg></a></p>
 </div>
 
+
 <div className="flex-grow border rounded-lg p-4 mr-4">
   <p>Name: Milena Silveira</p>
   <p>Email: milena@email.com</p>
-  <p><a href="https://github.com/sarahlee"><svg
+  <p><a href="https://github.com/MilenaSilveira"><svg
     xmlns="http://www.w3.org/2000/svg"
     class="h-5 w-5"
     fill="currentColor"
